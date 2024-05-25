@@ -1,9 +1,7 @@
 'use client';
 
-import { XMarkIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { removeItem } from 'components/cart/actions';
-import LoadingDots from 'components/loading-dots';
 import type { CartItem } from 'lib/shopify/types';
 import { useFormState, useFormStatus } from 'react-dom';
 
@@ -25,11 +23,7 @@ function SubmitButton() {
         }
       )}
     >
-      {pending ? (
-        <LoadingDots className="bg-white" />
-      ) : (
-        <XMarkIcon className="hover:text-accent-3 mx-[1px] h-4 w-4 text-white dark:text-black" />
-      )}
+      {pending ? 'loading...' : 'X'}
     </button>
   );
 }

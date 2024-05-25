@@ -1,6 +1,5 @@
 'use client';
 
-import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { addItem } from 'components/cart/actions';
 import { ProductVariant } from 'lib/shopify/types';
@@ -34,9 +33,7 @@ function SubmitButton({
         aria-disabled
         className={clsx(buttonClasses, disabledClasses)}
       >
-        <div className="absolute left-0 ml-4">
-          <PlusIcon className="h-5" />
-        </div>
+        <div className="absolute left-0 ml-4">+</div>
         Add To Cart
       </button>
     );
@@ -54,9 +51,7 @@ function SubmitButton({
         [disabledClasses]: pending
       })}
     >
-      <div className="absolute left-0 ml-4">
-        {pending ? 'loading' : <PlusIcon className="h-5" />}
-      </div>
+      <div className="absolute left-0 ml-4">{pending ? 'loading' : '+'}</div>
       Add To Cart
     </button>
   );

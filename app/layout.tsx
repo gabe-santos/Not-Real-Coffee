@@ -1,3 +1,4 @@
+import Cart from 'components/cart';
 import { ReactNode } from 'react';
 import './globals.css';
 
@@ -22,6 +23,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en">
       <body className="flex flex-col">
+        <div className="flex justify-end p-4">
+          <Cart />
+        </div>
         <main>{children}</main>
       </body>
     </html>

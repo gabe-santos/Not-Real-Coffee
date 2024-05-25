@@ -3,7 +3,6 @@ import Price from 'components/price';
 
 import { Product } from 'lib/shopify/types';
 import { Suspense } from 'react';
-import { VariantSelector } from './variant-selector';
 
 export function ProductDescription({ product }: { product: Product }) {
   return (
@@ -15,9 +14,6 @@ export function ProductDescription({ product }: { product: Product }) {
           currencyCode={product.priceRange.maxVariantPrice.currencyCode}
         />
       </div>
-      <Suspense fallback={null}>
-        <VariantSelector options={product.options} variants={product.variants} />
-      </Suspense>
 
       {product.descriptionHtml ? <div>{product.descriptionHtml}</div> : null}
 

@@ -1,7 +1,7 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+
 import Price from 'components/price';
 import { DEFAULT_OPTION } from 'lib/constants';
 import type { Cart } from 'lib/shopify/types';
@@ -75,7 +75,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
 
               {!cart || cart.lines.length === 0 ? (
                 <div className="mt-20 flex w-full flex-col items-center justify-center overflow-hidden">
-                  <ShoppingCartIcon className="h-16" />
+                  Cart
                   <p className="mt-6 text-center text-2xl font-bold">Your cart is empty.</p>
                 </div>
               ) : (
