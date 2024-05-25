@@ -13,6 +13,7 @@ export default async function HomePage() {
     <>
       <h1 className="text-8xl">Home Page</h1>
       <div className="flex w-full justify-between">
+        <div className="animation-carousel"></div>
         {products.map((p) => {
           return (
             <Link href={'/product/' + p.handle} key={p.id}>
