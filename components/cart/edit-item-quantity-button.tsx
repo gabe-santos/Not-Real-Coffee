@@ -1,9 +1,7 @@
 'use client';
 
-import { MinusIcon, PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { updateItemQuantity } from 'components/cart/actions';
-import LoadingDots from 'components/loading-dots';
 import type { CartItem } from 'lib/shopify/types';
 import { useFormState, useFormStatus } from 'react-dom';
 
@@ -26,13 +24,7 @@ function SubmitButton({ type }: { type: 'plus' | 'minus' }) {
         }
       )}
     >
-      {pending ? (
-        <LoadingDots className="bg-black dark:bg-white" />
-      ) : type === 'plus' ? (
-        <PlusIcon className="h-4 w-4 dark:text-neutral-500" />
-      ) : (
-        <MinusIcon className="h-4 w-4 dark:text-neutral-500" />
-      )}
+      {pending ? 'loading...' : type === 'plus' ? '+' : '-'}
     </button>
   );
 }

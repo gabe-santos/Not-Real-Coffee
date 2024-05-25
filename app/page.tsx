@@ -1,20 +1,32 @@
-import { Carousel } from 'components/carousel';
-import { ThreeItemGrid } from 'components/grid/three-items';
-import Footer from 'components/layout/footer';
+import { getProducts } from 'lib/shopify';
+import Image from 'next/image';
+import Link from 'next/link';
 
-export const metadata = {
-  description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
-  openGraph: {
-    type: 'website'
-  }
-};
+// export const metadata = {
+//   description: "Not Real Coffee. It simply doesn't exist"
+// };
 
 export default async function HomePage() {
+  const products = await getProducts({});
+
   return (
     <>
-      <ThreeItemGrid />
-      <Carousel />
-      <Footer />
+      <h1 className="text-8xl">Home Page</h1>
+      <div className="flex w-full justify-between">
+        {products.map((p) => {
+          return (
+            <Link href={'/product/' + p.handle} key={p.id}>
+              <Image
+                src={p.featuredImage.url}
+                alt={p.featuredImage.altText}
+                width={200}
+                height={200}
+                className="w-full"
+              />
+            </Link>
+          );
+        })}
+      </div>
     </>
   );
 }

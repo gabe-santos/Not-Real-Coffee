@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)']
+        sans: ['Overused Grotesk']
       },
       keyframes: {
         fadeIn: {
@@ -34,8 +34,6 @@ module.exports = {
     hoverOnlyWhenSupported: true
   },
   plugins: [
-    require('@tailwindcss/container-queries'),
-    require('@tailwindcss/typography'),
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
