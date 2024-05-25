@@ -3,7 +3,6 @@
 import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { addItem } from 'components/cart/actions';
-import LoadingDots from 'components/loading-dots';
 import { ProductVariant } from 'lib/shopify/types';
 import { useSearchParams } from 'next/navigation';
 import { useFormState, useFormStatus } from 'react-dom';
@@ -56,7 +55,7 @@ function SubmitButton({
       })}
     >
       <div className="absolute left-0 ml-4">
-        {pending ? <LoadingDots className="mb-3 bg-white" /> : <PlusIcon className="h-5" />}
+        {pending ? 'loading' : <PlusIcon className="h-5" />}
       </div>
       Add To Cart
     </button>
