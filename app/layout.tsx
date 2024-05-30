@@ -1,4 +1,4 @@
-import Cart from 'components/cart';
+import Navbar from 'components/navigation/navbar';
 import { ReactNode } from 'react';
 import './globals.css';
 
@@ -22,10 +22,9 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en ">
-      <body className="text-fluid-base flex flex-col">
-        <div className="flex justify-end p-4">
-          <Cart />
-        </div>
+      <body className="flex flex-col text-fluid-base">
+        <Navbar />
+        <div className="flex justify-end p-4"></div>
         <main>{children}</main>
       </body>
     </html>
