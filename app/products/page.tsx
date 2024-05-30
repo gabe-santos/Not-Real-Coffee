@@ -1,15 +1,12 @@
+import ProductView from 'components/products-view';
 import { getProducts } from 'lib/shopify';
+import { Product } from 'lib/shopify/types';
 
 export default async function Products() {
-  const allProducts = await getProducts({ query: '' });
+  const allProducts: Product[] = await getProducts({ query: '' });
   return (
     <div>
-      <h1>All Products</h1>
-      <div className="">
-        {allProducts.map((p) => {
-          return <li key={p.id}>{p.title}</li>;
-        })}
-      </div>
+      <ProductView productList={allProducts} />
     </div>
   );
 }

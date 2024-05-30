@@ -21,8 +21,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className="flex flex-col">
+    <html lang="en ">
+      <body className="text-fluid-base flex flex-col">
         <div className="flex justify-end p-4">
           <Cart />
         </div>
