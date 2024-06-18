@@ -21,13 +21,13 @@ export default function ProductView({ productList }: ProductViewProps) {
   };
 
   return (
-    <div className="gap-fluid-16 px-fluid-16 flex w-full flex-col">
+    <div className="flex w-full flex-col gap-fluid-16 px-fluid-16">
       <FilterButtons
         filter={filter}
         filterVals={filterVals}
         handleFilterClick={handleFilterClick}
       />
-      <div className="gap-fluid-48 grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full grid-cols-1 gap-fluid-48 md:grid-cols-2 lg:grid-cols-3">
         {productList.map((p) => {
           return <ProductCard key={p.id} product={p} />;
         })}
@@ -38,7 +38,7 @@ export default function ProductView({ productList }: ProductViewProps) {
 
 const FilterButtons = ({ filter, filterVals, handleFilterClick }: any) => {
   return (
-    <div className="text-fluid-xl gap-fluid-16 flex justify-between font-semibold text-opacity-30 md:justify-start">
+    <div className="flex justify-between gap-fluid-16 text-fluid-xl font-semibold text-opacity-30 md:justify-start">
       {Object.entries(filterVals).map(([key, val]) => {
         const isSelected = filter === val;
         return (
