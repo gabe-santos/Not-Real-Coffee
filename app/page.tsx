@@ -11,9 +11,9 @@ export default async function HomePage() {
   return (
     <>
       <Image src={medium} alt="medium image" className="h-full w-full object-cover" />
-      <section className="flex h-screen w-full">
-        <div>header</div>
-        <div>The best coffee you'll never have</div>
+      <section className="flex h-screen w-full flex-col items-center justify-center">
+        <div className="w-1/2 text-5xl">fuck you</div>
+        <div className="w-1/2 text-3xl">you wish you could try this coffee</div>
       </section>
     </>
   );

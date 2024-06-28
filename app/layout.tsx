@@ -2,6 +2,8 @@ import Navbar from 'components/navigation/navbar';
 import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import './globals.css';
+import Lenis from 'lenis';
+import SmoothScrolling from 'providers/smooth-scrolling';
 
 const { SITE_NAME } = process.env;
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
@@ -30,9 +32,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en">
       <body className={`${overusedGrotesk.className} flex flex-col items-center text-md`}>
-        <Navbar />
-        {children}
-        <footer className="h-screen w-full bg-black">testing</footer>
+        <SmoothScrolling>
+          <Navbar />
+          {children}
+          <footer className="flex h-screen w-full items-center justify-center bg-black text-white">
+            <div className="h-1/4 w-1/4 rounded-xl border  bg-glass"> bitch</div>
+          </footer>
+        </SmoothScrolling>
       </body>
     </html>
   );
