@@ -29,9 +29,10 @@ const overusedGrotesk = localFont({
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${overusedGrotesk.className} flex flex-col items-center text-fluid-base`}>
+      <body className={`${overusedGrotesk.className} flex flex-col items-center text-md`}>
         <Navbar />
-        <main className="w-full">{children}</main>
+        {children}
+        <footer className="h-screen w-full bg-black">testing</footer>
       </body>
     </html>
   );

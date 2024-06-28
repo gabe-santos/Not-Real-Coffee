@@ -21,94 +21,89 @@ export default function NavMenu({ options }) {
   };
 
   // Set initial state of menuRef
-  useGSAP(() => {
-    if (menuRef.current) {
-      gsap.set(menuRef.current, { x: '-100%' });
-    }
-    // if (linkRefs.current.length) {
-    //   gsap.set(linkRefs.current, { y: 100, opacity: 0 });
-    // }
-  });
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  useGSAP(
-    () => {
-      if (isOpen) {
-        gsap.to(menuRef.current, {
-          duration: 0.4,
-          // y: '0%',
-          x: '0%',
-          display: 'flex',
-          ease: 'power3.in',
-          onComplete: () => {
-            gsap.fromTo(
-              linkRefs.current,
-              { y: '-100%', opacity: 0 },
-              { y: 0, opacity: 1, duration: 0.2, stagger: 0.1 }
-            );
-          }
-        });
-      } else {
-        gsap.to(linkRefs.current, {
-          y: '-100%',
-          opacity: 0,
-          stagger: 0.1,
-          onStart: () => {
-            gsap.to(menuRef.current, {
-              x: '-100%',
-              duration: 0.4,
-              ease: 'power3.in'
-            });
-          }
-        });
-      }
-    },
-    { dependencies: [isOpen] }
-  );
+  // useGSAP(() => {
+  //   if (menuRef.current) {
+  //     gsap.set(menuRef.current, { opacity: 0 });
+  //   }
+  //   // if (linkRefs.current.length) {
+  //   //   gsap.set(linkRefs.current, { y: 100, opacity: 0 });
+  //   // }
+  // });
+  //
+  // useEffect(() => {
+  //   const handleClickOutside = (e) => {
+  //     if (menuRef.current && !menuRef.current.contains(e.target)) {
+  //       setIsOpen(false);
+  //     }
+  //   };
+  //
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, []);
+  //
+  // useGSAP(
+  //   () => {
+  //     if (isOpen) {
+  //       gsap.to(menuRef.current, {
+  //         duration: 0.4,
+  //         // y: '0%',
+  //         opacity: '100%',
+  //         display: 'flex',
+  //         ease: 'power3.in',
+  //         onComplete: () => {
+  //           gsap.fromTo(
+  //             linkRefs.current,
+  //             { y: '-100%', opacity: 0 },
+  //             { y: 0, opacity: 1, duration: 0.2, stagger: 0.1 }
+  //           );
+  //         }
+  //       });
+  //     } else {
+  //       gsap.to(linkRefs.current, {
+  //         y: '-100%',
+  //         opacity: 0,
+  //         stagger: 0.1,
+  //         onStart: () => {
+  //           gsap.to(menuRef.current, {
+  //             x: '-100%',
+  //             duration: 0.4,
+  //             ease: 'power3.in'
+  //           });
+  //         }
+  //       });
+  //     }
+  //   },
+  //   { dependencies: [isOpen] }
+  // );
 
   return (
-    <div className="md:hidden">
-      <div className="relative inline-block">
-        <button
-          className="rounded-2xl border border-black px-fluid-12 py-[0px]"
-          onClick={handleToggle}
-        >
-          Menu
-        </button>
-        <div
-          ref={menuRef}
-          className="fixed left-0 top-0 z-10 flex h-screen w-screen justify-between bg-grey px-fluid-12 py-fluid-6 text-black"
-        >
-          <ul className="mt-[64px] flex flex-col overflow-hidden text-fluid-2xl font-semibold uppercase">
-            {options.map((o, index) => (
-              <Link
-                ref={(el) => (linkRefs.current[index] = el)}
-                key={index}
-                className="overflow-hidden"
-                onClick={() => handleSelect(o)}
-                href={o.route}
-              >
-                <span className="opacity-80 hover:opacity-100">{o.title}</span>
-              </Link>
-            ))}
-          </ul>
-          <div onClick={handleToggle} className="cursor-pointer ">
-            x
-          </div>
-        </div>
+    <div className="relative">
+      <button
+        className="bg-glass text-lg transition-all duration-300 pill hover:bg-black hover:text-white"
+        onClick={handleToggle}
+      >
+        Menu
+      </button>
+      <div
+        ref={menuRef}
+        className={`fixed inset-x-0 top-2xl z-50 flex h-screen w-screen flex-col items-center bg-glass transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+      >
+        <ul className="flex h-fit w-full max-w-screen flex-col justify-start px-xs text-6xl">
+          {options.map((o, index) => (
+            <Link
+              ref={(el) => (linkRefs.current[index] = el)}
+              key={index}
+              className="overflow-hidden leading-none"
+              onClick={() => handleSelect(o)}
+              href={o.route}
+            >
+              <span className="text-zinc-950 hover:opacity-50">{o.title}</span>
+            </Link>
+          ))}
+        </ul>
       </div>
     </div>
   );

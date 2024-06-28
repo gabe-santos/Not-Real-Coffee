@@ -12,7 +12,7 @@ const navList = [
     route: '/'
   },
   {
-    title: 'Shop',
+    title: 'Products',
     route: '/products'
   },
   {
@@ -27,14 +27,15 @@ const navList = [
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between">
-      <Link href="/">
-        <Image src={logo} alt="logo" className="w-[116px]" />
+    <nav className="fixed z-50 flex h-2xl w-full max-w-screen items-center justify-between border-b px-xs py-sm">
+      <Link href="/" className="h-lg rounded-3xl bg-glass bg-white/30 px-sm">
+        <span className="text-lg font-medium tracking-tight">NOT REAL Coffee</span>
+        {/* <Image src={logo} alt="logo" className="h-[34px]" /> */}
       </Link>
-      <div className="gap-fluid-4 flex items-center justify-end">
-        <NavMenu options={navList} />
-        <Cart />
-      </div>
+      {/* <div className="flex items-center justify-end gap-xs"> */}
+      <NavMenu options={navList} />
+      <Cart />
+      {/* </div> */}
     </nav>
   );
 }

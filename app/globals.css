@@ -95,3 +95,29 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.333,1440,24,1.333,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+  /* Fluid Type */
+  --step--1: clamp(0.844rem, 0.7636rem + 0.4019vi, 1.1253rem);
+  --step-0: clamp(1.125rem, 1.0179rem + 0.5357vi, 1.5rem);
+  --step-1: clamp(1.4996rem, 1.3568rem + 0.7141vi, 1.9995rem);
+  --step-2: clamp(1.999rem, 1.8086rem + 0.9519vi, 2.6653rem);
+  --step-3: clamp(2.6647rem, 2.4109rem + 1.2689vi, 3.5529rem);
+  --step-4: clamp(3.552rem, 3.2137rem + 1.6914vi, 4.736rem);
+  --step-5: clamp(4.7348rem, 4.2839rem + 2.2547vi, 6.3131rem);
+  --step-6: clamp(6.3115rem, 5.7104rem + 3.0055vi, 8.4153rem);
+  --step-7: clamp(8.4132rem, 7.612rem + 4.0063vi, 11.2177rem);
+
+  /* Fluid Space */
+  --space-3xs: clamp(0.3125rem, 0.2946rem + 0.0893vi, 0.375rem);
+  --space-2xs: clamp(0.5625rem, 0.5089rem + 0.2679vi, 0.75rem);
+  --space-xs: clamp(0.875rem, 0.8036rem + 0.3571vi, 1.125rem);
+  --space-sm: clamp(1.125rem, 1.0179rem + 0.5357vi, 1.5rem);
+  --space-md: clamp(1.6875rem, 1.5268rem + 0.8036vi, 2.25rem);
+  --space-lg: clamp(2.25rem, 2.0357rem + 1.0714vi, 3rem);
+  --space-xl: clamp(3.375rem, 3.0536rem + 1.6071vi, 4.5rem);
+  --space-2xl: clamp(4.5rem, 4.0714rem + 2.1429vi, 6rem);
+  --space-3xl: clamp(6.75rem, 6.1071rem + 3.2143vi, 9rem);
+}

@@ -9,24 +9,18 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Link href={`/product/${product.handle}`} className="gap-fluid-8 flex flex-col">
-      <div className="aspect-square w-full">
+    <Link href={`/product/${product.handle}`} className="group flex flex-col gap-xs">
+      <div className="aspect-square w-full overflow-hidden rounded-2xl">
         <Image
-          className="aspect-square h-auto w-full rounded-2xl object-cover"
+          className="aspect-square h-auto w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
           src={product.featuredImage.url}
-          width="286"
-          height="286"
+          width={1000}
+          height={1000}
           alt={product.featuredImage.altText}
         />
-      </div>
-      <div className="px-fluid-8 flex justify-between">
-        <div className="font-medium">{product.title}</div>
-        <div>
-          <Price
-            amount={product.priceRange.maxVariantPrice.amount}
-            currencyCode={product.priceRange.maxVariantPrice.currencyCode}
-          />
-        </div>
+        {/* <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/10 p-3xs opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100"> */}
+        {/*   <h3 className=" font- ">{product.title}</h3> */}
+        {/* </div> */}
       </div>
     </Link>
   );

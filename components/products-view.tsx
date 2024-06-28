@@ -21,7 +21,7 @@ export default function ProductView({ productList }: ProductViewProps) {
   };
 
   return (
-    <div className="flex w-full flex-col gap-fluid-16 px-fluid-16">
+    <div className="px-fluid-15 flex w-full max-w-screen flex-col gap-sm">
       <FilterButtons
         filter={filter}
         filterVals={filterVals}
@@ -38,7 +38,7 @@ export default function ProductView({ productList }: ProductViewProps) {
 
 const FilterButtons = ({ filter, filterVals, handleFilterClick }: any) => {
   return (
-    <div className="flex justify-between gap-fluid-16 text-fluid-xl font-semibold text-opacity-30 md:justify-start">
+    <div className="flex justify-between gap-sm text-xl font-semibold text-opacity-30 md:justify-start">
       {Object.entries(filterVals).map(([key, val]) => {
         const isSelected = filter === val;
         return (
