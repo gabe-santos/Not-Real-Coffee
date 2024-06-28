@@ -90,9 +90,9 @@ export default function NavMenu({ options }) {
         </button>
         <div
           ref={menuRef}
-          className="py-fluid-6 bg-grey fixed left-0 top-0 z-10 flex h-screen w-screen justify-between px-fluid-12 text-black"
+          className="fixed left-0 top-0 z-10 flex h-screen w-screen justify-between bg-grey px-fluid-12 py-fluid-6 text-black"
         >
-          <ul className="text-fluid-2xl mt-[64px] flex flex-col overflow-hidden font-semibold uppercase">
+          <ul className="mt-[64px] flex flex-col overflow-hidden text-fluid-2xl font-semibold uppercase">
             {options.map((o, index) => (
               <Link
                 ref={(el) => (linkRefs.current[index] = el)}

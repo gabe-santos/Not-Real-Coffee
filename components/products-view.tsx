@@ -42,13 +42,13 @@ const FilterButtons = ({ filter, filterVals, handleFilterClick }: any) => {
       {Object.entries(filterVals).map(([key, val]) => {
         const isSelected = filter === val;
         return (
-          <div
+          <button
             onClick={() => handleFilterClick(val)}
             key={key}
             className={isSelected ? '' : 'opacity-30'}
           >
             {val.toUpperCase()}
-          </div>
+          </button>
         );
       })}
     </div>

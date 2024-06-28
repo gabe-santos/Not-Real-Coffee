@@ -1,5 +1,6 @@
 import Navbar from 'components/navigation/navbar';
 import { ReactNode } from 'react';
+import localFont from 'next/font/local';
 import './globals.css';
 
 const { SITE_NAME } = process.env;
@@ -19,13 +20,18 @@ export const metadata = {
   }
 };
 
+const overusedGrotesk = localFont({
+  src: '../fonts/OverusedGrotesk-VF.woff2',
+  display: 'swap',
+  variable: '--font-overusedGrotesk'
+});
+
 export default async function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en ">
-      <body className="flex flex-col text-fluid-base">
+    <html lang="en">
+      <body className={`${overusedGrotesk.className} flex flex-col items-center text-fluid-base`}>
         <Navbar />
-        <div className="flex justify-end p-4"></div>
-        <main>{children}</main>
+        <main className="w-full">{children}</main>
       </body>
     </html>
   );
