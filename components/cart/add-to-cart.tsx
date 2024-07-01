@@ -2,6 +2,7 @@
 
 import clsx from 'clsx';
 import { addItem } from 'components/cart/actions';
+import { Button } from 'components/ui/button';
 import { ProductVariant } from 'lib/shopify/types';
 import { useSearchParams } from 'next/navigation';
 import { useFormState, useFormStatus } from 'react-dom';
@@ -14,8 +15,7 @@ function SubmitButton({
   selectedVariantId: string | undefined;
 }) {
   const { pending } = useFormStatus();
-  const buttonClasses =
-    'relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white';
+  const buttonClasses = 'text-sm uppercase text-white bg-black';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
 
   if (!availableForSale) {
@@ -26,34 +26,34 @@ function SubmitButton({
     );
   }
 
-  if (!selectedVariantId) {
-    return (
-      <button
-        aria-label="Please select an option"
-        aria-disabled
-        className={clsx(buttonClasses, disabledClasses)}
-      >
-        <div className="absolute left-0 ml-4">+</div>
-        Add To Cart
-      </button>
-    );
-  }
-
+  // if (!selectedVariantId) {
+  //   return (
+  //     <button
+  //       aria-label="Please select an option"
+  //       aria-disabled
+  //       className={clsx(buttonClasses, disabledClasses)}
+  //     >
+  //       <div className="absolute left-0 ml-4">+</div>
+  //       Add To Cart
+  //     </button>
+  //   );
+  // }
+  //
   return (
-    <button
+    <Button
+      variant="default"
       onClick={(e: React.FormEvent<HTMLButtonElement>) => {
         if (pending) e.preventDefault();
       }}
       aria-label="Add to cart"
       aria-disabled={pending}
       className={clsx(buttonClasses, {
-        'hover:opacity-90': true,
+        'transition-all duration-300 hover:invert': true,
         [disabledClasses]: pending
       })}
     >
-      <div className="absolute left-0 ml-4">{pending ? 'loading' : '+'}</div>
       Add To Cart
-    </button>
+    </Button>
   );
 }
 

@@ -4,6 +4,18 @@ export const getProductQuery = /* GraphQL */ `
   query getProduct($handle: String!) {
     product(handle: $handle) {
       ...product
+      caffeine_level: metafield(namespace: "custom", key: "caffeine_level") {
+        key
+        value
+      }
+      tasting_notes: metafield(namespace: "custom", key: "tasting_notes") {
+        key
+        value
+      }
+      sweetness: metafield(namespace: "custom", key: "sweetness") {
+        key
+        value
+      }
     }
   }
   ${productFragment}

@@ -54,7 +54,7 @@ module.exports = {
     function ({ addUtilities }) {
       addUtilities({
         '.bg-glass': {
-          '@apply bg-white/25 backdrop-blur-lg': {}
+          '@apply bg-white/30 backdrop-blur-lg': {}
         },
         '.pill': {
           '@apply h-lg px-sm rounded-3xl': {}

@@ -6,7 +6,12 @@ import Link from 'next/link';
 import Cart from '../cart';
 import NavMenu from './nav-menu';
 
-const navList = [
+export interface NavMenuItem {
+  title: string;
+  route: string;
+}
+
+const navList: NavMenuItem[] = [
   {
     title: 'Home',
     route: '/'
@@ -22,6 +27,10 @@ const navList = [
   {
     title: 'Contact',
     route: '/contact'
+  },
+  {
+    title: 'Locations',
+    route: '/locations'
   }
 ];
 

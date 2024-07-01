@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { Button } from 'components/ui/button';
 import arrowDown from 'public/arrow-down.svg';
 import arrowUp from 'public/arrow-up.svg';
-import { Menu, MenuButton, MenuItems, Transition } from '@headlessui/react';
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
+import { NavMenuItem } from './navbar';
 
 export default function NavMenu({ options }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,18 +58,29 @@ export default function NavMenu({ options }) {
             isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
           }`}
         >
-          <ul className="flex h-fit w-full max-w-screen flex-col justify-start px-xs pt-20 text-4xl">
-            {options.map((o, index) => (
-              <Link
-                key={index}
-                className="overflow-hidden leading-none"
-                onClick={() => handleSelect(o)}
-                href={o.route}
-              >
-                <span className="text-zinc-950 hover:opacity-50">{o.title}</span>
-              </Link>
-            ))}
+          <ul className="flex w-full max-w-screen flex-col items-start justify-start px-sm pt-xl text-4xl leading-none">
+            {options.map((o: NavMenuItem, i: number) => {
+              return (
+                <MenuItem key={i} onClick={() => setIsOpen(false)} className="hover:opacity-50">
+                  <Link href={o.route} className="">
+                    {o.title}
+                  </Link>
+                </MenuItem>
+              );
+            })}
           </ul>
+          {/*   <ul className="flex h-fit w-full max-w-screen flex-col justify-start px-xs pt-20 text-4xl"> */}
+          {/*     {options.map((o, index) => ( */}
+          {/*       <Link */}
+          {/*         key={index} */}
+          {/*         className="overflow-hidden leading-none" */}
+          {/*         onClick={() => setIsOpen(!false)} */}
+          {/*         href={o.route} */}
+          {/*       > */}
+          {/*         <span className="text-zinc-950 hover:opacity-50">{o.title}</span> */}
+          {/*       </Link> */}
+          {/*     ))} */}
+          {/*   </ul> */}
         </MenuItems>
       </Menu>
     </>

@@ -4,13 +4,15 @@ import { cn } from 'lib/utils';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  variant: 'glass';
+  variant: 'default' | 'glass' | 'outline';
 }
 
 const buttonVariants = cva('flex items-center gap-xs text-lg pill', {
   variants: {
     variant: {
-      glass: 'bg-glass'
+      default: 'bg-black text-white hover:invert transition-colors duration-300',
+      glass: 'bg-glass',
+      outline: 'border border-black'
     }
   }
 });
