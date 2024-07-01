@@ -22,11 +22,11 @@ export default function ProductView({ productList }: ProductViewProps) {
 
   return (
     <div className="px-fluid-15 flex w-full max-w-screen flex-col gap-sm">
-      <FilterButtons
-        filter={filter}
-        filterVals={filterVals}
-        handleFilterClick={handleFilterClick}
-      />
+      {/* <FilterButtons */}
+      {/*   filter={filter} */}
+      {/*   filterVals={filterVals} */}
+      {/*   handleFilterClick={handleFilterClick} */}
+      {/* /> */}
       <div className="grid w-full grid-cols-1 gap-fluid-48 md:grid-cols-2 lg:grid-cols-3">
         {productList.map((p) => {
           return <ProductCard key={p.id} product={p} />;
@@ -36,21 +36,21 @@ export default function ProductView({ productList }: ProductViewProps) {
   );
 }
 
-const FilterButtons = ({ filter, filterVals, handleFilterClick }: any) => {
-  return (
-    <div className="flex justify-between gap-sm text-xl text-opacity-30 md:justify-start">
-      {Object.entries(filterVals).map(([key, val]) => {
-        const isSelected = filter === val;
-        return (
-          <button
-            onClick={() => handleFilterClick(val)}
-            key={key}
-            className={isSelected ? '' : 'opacity-30'}
-          >
-            <span className="font-medium capitalize">{val}</span>
-          </button>
-        );
-      })}
-    </div>
-  );
-};
+// const FilterButtons = ({ filter, filterVals, handleFilterClick }: any) => {
+//   return (
+//     <div className="flex justify-between gap-sm text-xl text-opacity-30 md:justify-start">
+//       {Object.entries(filterVals).map(([key, val]) => {
+//         const isSelected = filter === val;
+//         return (
+//           <button
+//             onClick={() => handleFilterClick(val)}
+//             key={key}
+//             className={isSelected ? '' : 'opacity-30'}
+//           >
+//             <span className="font-medium capitalize">{val}</span>
+//           </button>
+//         );
+//       })}
+//     </div>
+//   );
+// };
