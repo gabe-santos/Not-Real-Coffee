@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import clsx from 'clsx';
 import { Button } from 'components/ui/button';
 import { ProductOption, ProductVariant } from 'lib/shopify/types';
@@ -24,6 +25,19 @@ export function CanVariantSelector({
   const searchParams = useSearchParams();
   const hasNoOptionsOrJustOneOption =
     !options.length || (options.length === 1 && options[0]?.values.length === 1);
+
+  useEffect(() => {
+    // If there are no search params, set the first option of each type as default
+    if (searchParams.toString() === '') {
+      const defaultParams = new URLSearchParams();
+      options.forEach((option) => {
+        if (option.values.length > 0) {
+          defaultParams.set(option.name.toLowerCase(), option.values[0]!);
+        }
+      });
+      router.replace(createUrl(pathname, defaultParams), { scroll: false });
+    }
+  }, [options, pathname, router, searchParams]);
 
   if (hasNoOptionsOrJustOneOption) {
     return null;

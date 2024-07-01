@@ -16,6 +16,14 @@ export const getProductQuery = /* GraphQL */ `
         key
         value
       }
+      boldness: metafield(namespace: "custom", key: "boldness") {
+        key
+        value
+      }
+      complexity: metafield(namespace: "custom", key: "complexity") {
+        key
+        value
+      }
     }
   }
   ${productFragment}

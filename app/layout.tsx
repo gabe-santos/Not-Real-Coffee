@@ -2,7 +2,6 @@ import Navbar from 'components/navigation/navbar';
 import { ReactNode } from 'react';
 import localFont from 'next/font/local';
 import './globals.css';
-import Lenis from 'lenis';
 import SmoothScrolling from 'providers/smooth-scrolling';
 import Footer from 'components/ui/footer';
 

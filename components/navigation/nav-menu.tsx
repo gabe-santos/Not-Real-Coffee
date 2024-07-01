@@ -9,16 +9,16 @@ import arrowUp from 'public/arrow-up.svg';
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
 import { NavMenuItem } from './navbar';
 
-export default function NavMenu({ options }) {
+export default function NavMenu({ options }: { options: NavMenuItem[] }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSelect = (option) => {
-    setIsOpen(false);
-  };
+  // const handleSelect = (option) => {
+  //   setIsOpen(false);
+  // };
 
   return (
     <>
@@ -61,8 +61,12 @@ export default function NavMenu({ options }) {
           <ul className="flex w-full max-w-screen flex-col items-start justify-start px-sm pt-xl text-4xl leading-none">
             {options.map((o: NavMenuItem, i: number) => {
               return (
-                <MenuItem key={i} onClick={() => setIsOpen(false)} className="hover:opacity-50">
-                  <Link href={o.route} className="">
+                <MenuItem key={i}>
+                  <Link
+                    onClick={() => setIsOpen(false)}
+                    href={o.route}
+                    className="hover:opacity-50"
+                  >
                     {o.title}
                   </Link>
                 </MenuItem>
