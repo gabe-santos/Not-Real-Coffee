@@ -25,7 +25,8 @@ module.exports = {
         '3xl': 'var(--step-4)',
         '4xl': 'var(--step-5)',
         '5xl': 'var(--step-6)',
-        '6xl': 'var(--step-7)'
+        '6xl': 'var(--step-7)',
+        '7xl': 'var(--step-8)'
       },
       spacing: {
         'fluid-4': '',
@@ -41,7 +42,8 @@ module.exports = {
         md: 'var(--space-md)',
         lg: 'var(--space-lg)',
         xl: 'var(--space-xl)',
-        '2xl': 'var(--space-2xl)'
+        '2xl': 'var(--space-2xl)',
+        '3xl': 'var(--space-3xl)'
       }
     }
   },
@@ -52,7 +54,7 @@ module.exports = {
     function ({ addUtilities }) {
       addUtilities({
         '.bg-glass': {
-          '@apply bg-white/10 backdrop-blur-md': {}
+          '@apply bg-white/25 backdrop-blur-lg': {}
         },
         '.pill': {
           '@apply h-lg px-sm rounded-3xl': {}

@@ -6,7 +6,7 @@
     "pnpm": ">=8"
   },
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -25,11 +25,13 @@
     "@gsap/react": "^2.1.1",
     "@headlessui/react": "^2.0.4",
     "@studio-freight/react-lenis": "^0.0.47",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "next": "^14.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "20.12.7",

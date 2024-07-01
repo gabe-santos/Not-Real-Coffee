@@ -1,3 +1,6 @@
+import { Button } from 'components/ui/button';
+import { cn } from 'lib/utils';
+
 export default function OpenCart({
   className,
   quantity
@@ -5,5 +8,9 @@ export default function OpenCart({
   className?: string;
   quantity?: number;
 }) {
-  return <div className="relative flex items-center bg-glass text-lg pill">Cart ({quantity})</div>;
+  return (
+    <Button variant="glass" className={cn(className)}>
+      Cart ({quantity})
+    </Button>
+  );
 }

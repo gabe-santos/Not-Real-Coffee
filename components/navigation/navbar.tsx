@@ -27,9 +27,9 @@ const navList = [
 
 export default function Navbar() {
   return (
-    <nav className="fixed z-50 flex h-2xl w-full max-w-screen items-center justify-between border-b px-xs py-sm">
-      <Link href="/" className="h-lg rounded-3xl bg-glass bg-white/30 px-sm">
-        <span className="text-lg font-medium tracking-tight">NOT REAL Coffee</span>
+    <nav className="fixed z-50 flex h-2xl w-full max-w-screen items-center justify-between px-sm py-sm">
+      <Link href="/" className="flex items-center bg-glass pill">
+        <span className="text-lg font-semibold tracking-tight">NOT REAL*</span>
         {/* <Image src={logo} alt="logo" className="h-[34px]" /> */}
       </Link>
       {/* <div className="flex items-center justify-end gap-xs"> */}

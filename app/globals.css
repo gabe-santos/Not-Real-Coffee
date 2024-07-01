@@ -100,24 +100,25 @@ textarea:not([rows]) {
 
 :root {
   /* Fluid Type */
-  --step--1: clamp(0.844rem, 0.7636rem + 0.4019vi, 1.1253rem);
-  --step-0: clamp(1.125rem, 1.0179rem + 0.5357vi, 1.5rem);
-  --step-1: clamp(1.4996rem, 1.3568rem + 0.7141vi, 1.9995rem);
-  --step-2: clamp(1.999rem, 1.8086rem + 0.9519vi, 2.6653rem);
-  --step-3: clamp(2.6647rem, 2.4109rem + 1.2689vi, 3.5529rem);
-  --step-4: clamp(3.552rem, 3.2137rem + 1.6914vi, 4.736rem);
-  --step-5: clamp(4.7348rem, 4.2839rem + 2.2547vi, 6.3131rem);
-  --step-6: clamp(6.3115rem, 5.7104rem + 3.0055vi, 8.4153rem);
-  --step-7: clamp(8.4132rem, 7.612rem + 4.0063vi, 11.2177rem);
+  --step--1: clamp(0.7502rem, 0.6788rem + 0.3569vi, 1rem);
+  --step-0: clamp(1rem, 0.8571rem + 0.7143vi, 1.5rem);
+  --step-1: clamp(1.333rem, 1.071rem + 1.31vi, 2.25rem);
+  --step-2: clamp(1.7769rem, 1.3203rem + 2.283vi, 3.375rem);
+  --step-3: clamp(2.3686rem, 1.5989rem + 3.8484vi, 5.0625rem);
+  --step-4: clamp(3.1573rem, 1.8898rem + 6.3377vi, 7.5938rem);
+  --step-5: clamp(4.2087rem, 2.1568rem + 10.2599vi, 11.3906rem);
+  --step-6: clamp(5.6102rem, 2.3315rem + 16.3939vi, 17.0859rem);
+  --step-7: clamp(7.4784rem, 2.2926rem + 25.9292vi, 25.6289rem);
+  --step-8: clamp(9.9688rem, 1.8332rem + 40.678vi, 38.4434rem);
 
   /* Fluid Space */
-  --space-3xs: clamp(0.3125rem, 0.2946rem + 0.0893vi, 0.375rem);
-  --space-2xs: clamp(0.5625rem, 0.5089rem + 0.2679vi, 0.75rem);
-  --space-xs: clamp(0.875rem, 0.8036rem + 0.3571vi, 1.125rem);
-  --space-sm: clamp(1.125rem, 1.0179rem + 0.5357vi, 1.5rem);
-  --space-md: clamp(1.6875rem, 1.5268rem + 0.8036vi, 2.25rem);
-  --space-lg: clamp(2.25rem, 2.0357rem + 1.0714vi, 3rem);
-  --space-xl: clamp(3.375rem, 3.0536rem + 1.6071vi, 4.5rem);
-  --space-2xl: clamp(4.5rem, 4.0714rem + 2.1429vi, 6rem);
-  --space-3xl: clamp(6.75rem, 6.1071rem + 3.2143vi, 9rem);
+  --space-3xs: clamp(0.25rem, 0.2143rem + 0.1786vi, 0.375rem);
+  --space-2xs: clamp(0.5rem, 0.4286rem + 0.3571vi, 0.75rem);
+  --space-xs: clamp(0.75rem, 0.6429rem + 0.5357vi, 1.125rem);
+  --space-sm: clamp(1rem, 0.8571rem + 0.7143vi, 1.5rem);
+  --space-md: clamp(1.5rem, 1.2857rem + 1.0714vi, 2.25rem);
+  --space-lg: clamp(2rem, 1.7143rem + 1.4286vi, 3rem);
+  --space-xl: clamp(3rem, 2.5714rem + 2.1429vi, 4.5rem);
+  --space-2xl: clamp(4rem, 3.4286rem + 2.8571vi, 6rem);
+  --space-3xl: clamp(6rem, 5.1429rem + 4.2857vi, 9rem);
 }

@@ -38,7 +38,7 @@ export default function ProductView({ productList }: ProductViewProps) {
 
 const FilterButtons = ({ filter, filterVals, handleFilterClick }: any) => {
   return (
-    <div className="flex justify-between gap-sm text-xl font-semibold text-opacity-30 md:justify-start">
+    <div className="flex justify-between gap-sm text-xl text-opacity-30 md:justify-start">
       {Object.entries(filterVals).map(([key, val]) => {
         const isSelected = filter === val;
         return (
@@ -47,7 +47,7 @@ const FilterButtons = ({ filter, filterVals, handleFilterClick }: any) => {
             key={key}
             className={isSelected ? '' : 'opacity-30'}
           >
-            {val.toUpperCase()}
+            <span className="font-medium capitalize">{val}</span>
           </button>
         );
       })}

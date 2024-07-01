@@ -24,7 +24,7 @@ function SubmitButton({ type }: { type: 'plus' | 'minus' }) {
         }
       )}
     >
-      {pending ? 'loading...' : type === 'plus' ? '+' : '-'}
+      {type === 'plus' ? '+' : '-'}
     </button>
   );
 }

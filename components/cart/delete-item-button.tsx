@@ -16,14 +16,27 @@ function SubmitButton() {
       }}
       aria-label="Remove cart item"
       aria-disabled={pending}
-      className={clsx(
-        'ease flex h-[17px] w-[17px] items-center justify-center rounded-full bg-neutral-500 transition-all duration-200',
-        {
-          'cursor-not-allowed px-0': pending
-        }
-      )}
+      className={clsx('ease flex items-center justify-center', {
+        'cursor-not-allowed px-0': pending
+      })}
     >
-      {pending ? 'loading...' : 'X'}
+      {pending ? (
+        'loading...'
+      ) : (
+        <>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-4"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+          Remove
+        </>
+      )}
     </button>
   );
 }
