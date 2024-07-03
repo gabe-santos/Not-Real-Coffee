@@ -5,9 +5,10 @@ import arrow from 'public/arrow-up.svg';
 
 export default function Footer() {
   return (
-    <footer className="flex h-[75vh] w-full flex-col items-center justify-between rounded-t-3xl bg-black px-md pb-sm text-white">
-      <div className="flex w-full flex-1 items-start justify-between">
-        <div className="flex flex-col">
+    <footer className="flex w-full flex-col items-center justify-between gap-sm rounded-t-3xl bg-black px-md pb-sm pt-2xl text-white">
+      {/* Links Section */}
+      <div className="grid w-full grid-cols-2 items-start justify-between gap-sm md:grid-cols-4 ">
+        <div className="flex w-full flex-col">
           <h3>Browse</h3>
           <ul className="flex flex-col text-grey">
             <Link href="/">Home</Link>
@@ -15,14 +16,14 @@ export default function Footer() {
             <Link href="/products">Products</Link>
           </ul>
         </div>
-        <div className="flex flex-col">
+        <div className="flex w-full flex-col">
           <h3>About</h3>
           <ul className="flex flex-col text-grey">
             <Link href="/contact">Contact</Link>
             <Link href="faqs">FAQs</Link>
           </ul>
         </div>
-        <div className="flex flex-col">
+        <div className="flex w-full flex-col">
           <h3>Socials</h3>
           <ul className="flex flex-col text-grey">
             <Link href="https://www.instagram.com/notreal.coffee">Instagram</Link>
@@ -32,8 +33,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="flex w-1/4 flex-col gap-sm">
-          <label className="text-lg" htmlFor="email">
+        <div className="flex w-full flex-col gap-sm">
+          <label className="text-md" htmlFor="email">
             Sign up to stay up to date with news and new releases
           </label>
           <input type="text" className="border border-grey bg-glass text-grey pill" name="email" />
@@ -41,13 +42,13 @@ export default function Footer() {
       </div>
       <Image className="w-screen " src={notRealBig} alt="not real big logo" />
       <div className="flex w-full justify-between pt-sm text-sm">
-        <p>
+        <p className="">
           Made with 🫶🏽 by <Link href="https://gabesantos.dev">Gabe Santos</Link>
         </p>
-        <p>
+        <p className="hidden md:block">
           <Link href="#top">Back to top</Link>
         </p>
-        <p>NOT REAL Coffee ©</p>
+        <p className="hidden md:block">NOT REAL Coffee ©</p>
       </div>
     </footer>
   );
