@@ -37,8 +37,11 @@ const navList: NavMenuItem[] = [
 export default function Navbar() {
   return (
     <nav className="fixed z-50 flex h-2xl w-full max-w-screen items-center justify-between px-sm py-sm">
-      <Link href="/" className="flex items-center bg-glass pill">
-        <Image src={logo} alt="logo" className="h-[34px] w-fit" />
+      <Link href="/" className="flex max-w-64 items-center bg-glass py-3xs pill">
+        <Image src={logo} alt="logo" className="hidden h-[34px] md:block" />
+        <h1 className="flex h-full w-full items-center text-lg font-semibold leading-none tracking-tight md:hidden">
+          *
+        </h1>
       </Link>
       <NavMenu options={navList} />
       <Cart />
