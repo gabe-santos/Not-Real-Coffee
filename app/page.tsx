@@ -21,7 +21,7 @@ export default async function HomePage() {
         This coffee doesn't exist * It's NOT REAL *
       </Marquee>
 
-      <section className="flex h-screen items-center rounded-3xl border border-black p-md text-xl leading-tight md:text-2xl">
+      <section className="flex h-screen items-center rounded-3xl border border-black p-md text-lg leading-tight md:text-2xl">
         <div className="">
           NOT REAL* Coffee is not a brand--it's an <span className="italic">idea</span>. A concept.
           A figment of your imagination. It's the whisper of caffeine in a world of shouting
