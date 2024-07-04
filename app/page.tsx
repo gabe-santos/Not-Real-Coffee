@@ -7,13 +7,14 @@ import boxer from 'public/images/boxer-2.jpg';
 import React from 'react';
 
 export const metadata = {
+  title: 'NOT REAL* Coffee',
   description: "Not Real Coffee. It simply doesn't exist"
 };
 
 export default async function HomePage() {
   return (
     <div className="flex h-full w-full max-w-screen flex-col gap-sm px-sm">
-      <div id="top" className="mt-3xl w-full max-w-screen overflow-hidden rounded-3xl">
+      <div id="top" className="relative mt-3xl w-full max-w-screen overflow-hidden rounded-3xl">
         <Image src={hero} alt="medium image" className="h-full w-full object-cover" />
       </div>
       <Marquee speed={2} className="flex w-full rounded-3xl bg-black text-3xl text-white">
