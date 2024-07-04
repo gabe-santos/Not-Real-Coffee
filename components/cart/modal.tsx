@@ -33,7 +33,7 @@ export default function CartModal({ cart }: { cart: Cart | undefined }) {
       </MenuButton>
       <MenuItems
         anchor="bottom end"
-        className="max-h-5/6 my-sm w-[400px] rounded-3xl bg-white p-sm"
+        className="max-h-5/6 my-sm w-[400px] rounded-3xl border bg-white p-sm"
       >
         <h1 className="">Cart</h1>
         {!cart || cart.lines.length === 0 ? (
