@@ -1,16 +1,9 @@
 import { notFound } from 'next/navigation';
 
-import { ProductDescription } from 'components/product/product-description';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import { Button } from 'components/ui/button';
-import Price from 'components/price';
-import { Product } from 'lib/shopify/types';
-import { AddToCart } from 'components/cart/add-to-cart';
-import { CanVariantSelector } from 'components/product/can-variant-selector';
-import StatRating from 'components/ui/stat-rating';
 import ColdBrewCanDetails from 'components/product/cold-brew-can-details';
 
 export default async function ProductPage({ params }: { params: { handle: string } }) {
@@ -23,7 +16,7 @@ export default async function ProductPage({ params }: { params: { handle: string
   return (
     <>
       <div className="mt-2xl flex w-full max-w-screen flex-col gap-lg px-lg md:flex-row">
-        <div className="h-[968px] w-full basis-full overflow-hidden ">
+        <div className="w-full basis-full overflow-hidden rounded-3xl md:h-[968px]">
           <Suspense
             fallback={
               <div className="relative aspect-square h-full max-h-[550px] w-full overflow-hidden" />
@@ -34,14 +27,15 @@ export default async function ProductPage({ params }: { params: { handle: string
               alt={product.featuredImage.altText}
               width={2000}
               height={2000}
-              className="h-full w-auto object-cover"
+              className="h-full w-full object-cover"
             />
           </Suspense>
         </div>
 
         {isColdBrewCan && <ColdBrewCanDetails coldBrewCan={product} />}
       </div>
-      <RelatedProducts id={product.id} />
+      {/* <RelatedProducts id={product.id} /> */}
+      <section className="h-screen"></section>
     </>
   );
 }

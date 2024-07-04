@@ -40,9 +40,9 @@ export default function ColdBrewCanDetails({ coldBrewCan }: { coldBrewCan: ColdB
 
   return (
     <div className="flex w-full basis-full flex-col items-center justify-end">
-      <div className="flex w-full max-w-[500px] flex-col">
-        <h1 className="text-lg font-medium uppercase">{coldBrewCan.title}</h1>
-        <p className="border-b border-black py-sm text-sm">
+      <div className="flex w-full max-w-[800px] flex-col">
+        <h1 className="text-xl font-medium uppercase">{coldBrewCan.title}</h1>
+        <p className="border-b border-black py-sm text-md">
           {selectedVariant ? (
             <span className="flex">
               <Price currencyCode="usd" amount={selectedVariant?.price.amount} /> / PK
@@ -59,16 +59,16 @@ export default function ColdBrewCanDetails({ coldBrewCan }: { coldBrewCan: ColdB
           />
         </div>
         <div className="flex flex-col gap-3xs border-b border-black py-sm">
-          <h2 className="text-sm font-semibold uppercase">Details</h2>
-          <p className="text-sm leading-tight">{coldBrewCan.description}</p>
+          <h2 className="text-md font-semibold uppercase">Details</h2>
+          <p className="text-md leading-tight">{coldBrewCan.description}</p>
         </div>
         <div className="flex justify-between gap-sm border-b border-black py-sm">
           <div className="w-full">
-            <h3 className="text-sm font-semibold uppercase">Taste</h3>
-            <p className="text-sm leading-tight">{coldBrewCan.tasting_notes?.value}</p>
+            <h3 className="text-md font-semibold uppercase">Taste</h3>
+            <p className="text-md leading-tight">{coldBrewCan.tasting_notes?.value}</p>
           </div>
           <div className="w-full">
-            <h2 className="text-sm font-semibold uppercase">Stats</h2>
+            <h2 className="text-md font-semibold uppercase">Stats</h2>
             <div className="flex flex-col">
               <StatRating label="Caffeine" value={coldBrewCan.caffeine_level?.value} />
               <StatRating label="Sweetness" value={coldBrewCan.sweetness?.value} />
