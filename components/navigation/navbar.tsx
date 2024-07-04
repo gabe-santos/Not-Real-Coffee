@@ -23,15 +23,15 @@ const navList: NavMenuItem[] = [
   {
     title: 'About',
     route: '/about'
-  },
-  {
-    title: 'Contact',
-    route: '/contact'
-  },
-  {
-    title: 'Locations',
-    route: '/locations'
   }
+  // {
+  //   title: 'Contact',
+  //   route: '/contact'
+  // }
+  // {
+  //   title: 'Locations',
+  //   route: '/locations'
+  // }
 ];
 
 export default function Navbar() {

@@ -1,8 +1,9 @@
 import Marquee from 'components/ui/marquee';
 import Image from 'next/image';
-import hero from 'public/images/light-v2.png';
+import hero from 'public/images/hero.png';
 import running from 'public/images/running.jpg';
 import coffeeSip from 'public/images/coffee-sip.jpg';
+import boxer from 'public/images/boxer-2.jpg';
 import React from 'react';
 
 export const metadata = {
@@ -58,11 +59,16 @@ export default async function HomePage() {
           <Image src={coffeeSip} alt="coffee sip" className="h-full w-full object-cover" />
         </div>
       </section>
-      <section className="flex h-screen flex-col justify-center text-pretty text-center text-3xl">
-        <p> Coffee for closers.</p>
-        <p> For dreamers.</p>
-        <p> For go-getters and winners.</p>
-      </section>
+      <TwoColumnSection>
+        <div className="flex w-full flex-col rounded-3xl border border-black p-md text-xl ">
+          <p> Coffee for closers.</p>
+          <p> For dreamers.</p>
+          <p> For go-getters and winners.</p>
+        </div>
+        <div className="h-full w-full overflow-hidden rounded-3xl">
+          <Image src={boxer} alt="boxer" className="h-full w-full object-cover" />
+        </div>
+      </TwoColumnSection>
     </div>
   );
 }
