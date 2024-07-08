@@ -5,15 +5,15 @@ import running from 'public/images/running-group.jpg';
 
 export default function About() {
   return (
-    <div className="mt-3xl flex w-full max-w-screen justify-center px-sm ">
+    <div className="mb-3xl mt-3xl flex w-full max-w-screen-lg justify-center px-sm ">
       <section className="flex h-screen w-full flex-col items-center gap-lg">
-        <div className="flex w-full justify-center gap-md">
+        <div className="flex w-full flex-col justify-evenly gap-md md:flex-row ">
           <PersonCard src={steven} name="Steven Yamane" title="Founder & CEO" />
           <PersonCard src={gabe} name="Gabe Santos" title="Director of Coffee" />
         </div>
-        <div className="rounded-3xl border border-black p-md ">
+        <div className="max-w-screen-lg rounded-3xl border border-black p-md ">
           <h3 className="w-full text-left font-semibold uppercase">Our Story</h3>
-          <p className="text-lg leading-tight md:text-2xl">
+          <p className="text-lg leading-tight md:text-xl">
             NOT REAL* is not real. It is not a real coffee company. This is a design and development
             project for Gabe Santos. The product and website were designed and built by Gabe. NOT
             REAL* Coffee does not exist... for now.
@@ -34,7 +34,7 @@ const PersonCard = ({
   title: string;
 }) => {
   return (
-    <div className="relative aspect-[3/4] max-w-[400px] overflow-hidden rounded-3xl">
+    <div className="relative aspect-[3/4] max-w-[300px] overflow-hidden rounded-3xl">
       <Image src={src} alt="person" className="h-full w-full object-cover" />
       <div className="absolute inset-x-0 bottom-xs left-xs w-fit rounded-3xl bg-glass px-sm py-3xs leading-none">
         <p className="text-md font-medium">{name}</p>
